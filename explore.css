@@ -1,0 +1,61 @@
+/* explore.css — Gen Z */
+.explore-search-bar {
+  position: sticky; top: 0; z-index: 10; padding: 14px 16px 12px;
+  background: rgba(12,12,12,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.search-wrap { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 14px; color: var(--text-3); pointer-events: none; display: flex; }
+.search-input {
+  width: 100%; background: var(--bg-3); border: 1.5px solid var(--border);
+  border-radius: var(--r-full); padding: 12px 42px; color: var(--text-1);
+  font-size: 14px; font-family: var(--font); font-weight: 600; outline: none; transition: all var(--t);
+}
+.search-input::placeholder { color: var(--text-3); }
+.search-input:focus { border-color: var(--brat); background: rgba(127,255,0,0.04); box-shadow: 0 0 0 3px rgba(127,255,0,0.1); }
+.search-clear { position: absolute; right: 14px; background: none; border: none; color: var(--text-3); cursor: pointer; font-size: 14px; font-weight: 800; transition: color var(--t); }
+.search-clear:hover { color: var(--pink); }
+
+.explore-tags { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.explore-tags::-webkit-scrollbar { display: none; }
+.explore-tag {
+  background: var(--bg-3); border: 1.5px solid var(--border); border-radius: var(--r-full);
+  padding: 7px 16px; font-size: 12px; font-weight: 800; color: var(--text-2);
+  cursor: pointer; white-space: nowrap; transition: all var(--t); font-family: var(--font);
+}
+.explore-tag:hover { border-color: var(--brat); color: var(--brat); }
+.explore-tag.active { background: rgba(127,255,0,0.1); border-color: var(--brat); color: var(--brat); box-shadow: 0 0 12px rgba(127,255,0,0.15); }
+
+.explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 3px; }
+.explore-item {
+  aspect-ratio: 1; position: relative; cursor: pointer; overflow: hidden;
+  background: var(--bg-3); display: flex; align-items: center; justify-content: center;
+  animation: gridIn 0.4s both ease;
+}
+@keyframes gridIn { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
+.explore-item:hover .explore-item-overlay { opacity: 1; }
+.explore-item-emoji { font-size: 42px; opacity: 0.22; }
+.explore-item-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  opacity: 0; transition: opacity 0.18s; color: white; font-size: 13px; font-weight: 800;
+}
+.explore-item.big { grid-column: span 2; grid-row: span 2; }
+.explore-item.big .explore-item-emoji { font-size: 80px; }
+
+.search-results { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.search-result-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: var(--r-md); cursor: pointer; transition: background var(--t); }
+.search-result-item:hover { background: var(--bg-3); }
+.search-result-meta { flex: 1; }
+.search-result-name { font-size: 13.5px; font-weight: 800; color: var(--text-1); }
+.search-result-sub  { font-size: 12px; color: var(--text-3); font-weight: 600; }
+.search-result-action {
+  background: rgba(127,255,0,0.1); border: 1.5px solid rgba(127,255,0,0.3); color: var(--brat);
+  padding: 6px 14px; border-radius: var(--r-full); font-size: 12px; font-weight: 800;
+  cursor: pointer; font-family: var(--font); transition: all var(--t);
+}
+.search-result-action:hover { background: rgba(127,255,0,0.18); }
+
+.no-results { text-align: center; padding: 48px 24px; color: var(--text-3); }
+.no-results-icon { font-size: 48px; margin-bottom: 12px; }
+.no-results-text { font-size: 15px; font-weight: 700; color: var(--text-2); }

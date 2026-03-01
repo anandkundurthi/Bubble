@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Bubble — Join</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="auth.css"/>
+</head>
+<body class="auth-body">
+  <div class="auth-bg">
+    <div class="auth-blob blob-1" style="background:rgba(0,240,255,0.12)"></div>
+    <div class="auth-blob blob-2" style="background:rgba(127,255,0,0.14)"></div>
+    <div class="auth-blob blob-3" style="background:rgba(177,79,255,0.1)"></div>
+    <div class="auth-blob blob-4" style="background:rgba(255,45,155,0.1)"></div>
+  </div>
+
+  <div class="auth-layout">
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <a href="login.html" class="bubble-logo" style="font-size:44px">
+          bub<span class="b-green">ble</span><span class="b-dot"></span>
+        </a>
+        <p class="auth-tagline">
+          <span class="t-pink">join</span> the<br>conversation.
+        </p>
+        <div class="auth-preview-bubbles">
+          <div class="preview-bubble pb-1">🚀</div>
+          <div class="preview-bubble pb-2">💡</div>
+          <div class="preview-bubble pb-3">🎯</div>
+          <div class="preview-bubble pb-4">✨</div>
+          <div class="preview-bubble pb-5">🌍</div>
+        </div>
+        <div class="auth-marquee">
+          <div class="auth-marquee-inner">
+            <span>it's giving ✦</span><span>main character energy ✦</span>
+            <span>no cap ✦</span><span>living rent free ✦</span>
+            <span>it's giving ✦</span><span>main character energy ✦</span>
+            <span>no cap ✦</span><span>living rent free ✦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-card page-enter">
+        <div class="auth-mobile-logo">
+          <a href="login.html" class="bubble-logo">bub<span class="b-green">ble</span><span class="b-dot"></span></a>
+        </div>
+
+        <h1 class="auth-title">join the vibe 🫧</h1>
+        <p class="auth-subtitle">takes 30 seconds, no cap</p>
+
+        <form class="auth-form" id="signupForm" novalidate>
+          <div class="name-row">
+            <div class="input-group">
+              <label class="input-label">First Name</label>
+              <input class="input-field" type="text" id="firstName" placeholder="Anand" autocomplete="given-name"/>
+              <span class="field-error" id="firstNameErr">at least tell us your name 😅</span>
+            </div>
+            <div class="input-group">
+              <label class="input-label">Last Name</label>
+              <input class="input-field" type="text" id="lastName" placeholder="K" autocomplete="family-name"/>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Username</label>
+            <div class="input-wrap">
+              <input class="input-field has-icon" type="text" id="signupUsername" placeholder="your.handle" autocomplete="username"/>
+              <span class="input-icon" id="usernameStatus"></span>
+            </div>
+            <span class="field-error" id="usernameErr">username taken bestie 🙅</span>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Email</label>
+            <div class="input-wrap">
+              <input class="input-field has-icon" type="email" id="signupEmail" placeholder="you@anywhere.com" autocomplete="email"/>
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+            </div>
+            <span class="field-error" id="emailErr">that's not a valid email bestie 🙈</span>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Password</label>
+            <div class="input-wrap">
+              <input class="input-field has-icon" type="password" id="signupPassword" placeholder="make it slay (6+ chars)" autocomplete="new-password"/>
+              <span class="input-icon clickable" id="togglePwd">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+            </div>
+            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+            <span class="field-error" id="pwdErr">min 6 chars, you got this 💪</span>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Confirm Password</label>
+            <input class="input-field" type="password" id="confirmPassword" placeholder="say it again" autocomplete="new-password"/>
+            <span class="field-error" id="confirmErr">passwords don't match frfr 😤</span>
+          </div>
+
+          <div class="terms-row">
+            by signing up you agree to our <a href="#" class="auth-link">terms</a> and <a href="#" class="auth-link">privacy policy</a> ✌️
+          </div>
+
+          <span class="field-error form-error-box" id="formErr"></span>
+
+          <button type="submit" class="btn btn-primary btn-full" id="signupBtn">
+            <span id="signupBtnText">create my bubble ✦</span>
+            <span class="spinner" id="signupSpinner" style="display:none"></span>
+          </button>
+        </form>
+
+        <div class="divider">already have an account?</div>
+        <p class="auth-switch">
+          <a href="login.html" class="auth-link">sign in →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="auth.js"></script>
+  <script src="utils.js"></script>
+  <script>
+    Auth.redirectIfLoggedIn();
+
+    document.getElementById('togglePwd').addEventListener('click', () => {
+      const f = document.getElementById('signupPassword');
+      f.type = f.type === 'password' ? 'text' : 'password';
+    });
+
+    document.getElementById('signupPassword').addEventListener('input', (e) => {
+      const val = e.target.value;
+      const fill = document.getElementById('strengthFill');
+      let s = 0;
+      if (val.length >= 6) s++;
+      if (val.length >= 10) s++;
+      if (/[A-Z]/.test(val) && /[0-9]/.test(val)) s++;
+      if (/[^A-Za-z0-9]/.test(val)) s++;
+      const cols = ['#ff2d9b','#ff5e3a','#ffe44d','#7fff00'];
+      fill.style.width = val ? ['25%','50%','75%','100%'][s-1] || '10%' : '0%';
+      fill.style.background = val ? cols[s-1] || '#ff2d9b' : '';
+    });
+
+    let uTimer;
+    document.getElementById('signupUsername').addEventListener('input', (e) => {
+      clearTimeout(uTimer);
+      const icon = document.getElementById('usernameStatus');
+      icon.innerHTML = '<span style="color:var(--text-3);font-size:12px">...</span>';
+      uTimer = setTimeout(() => {
+        const taken = ['anand.k','priya.dev','ravi_x','sneha.ui','karthik99','meera.art','vijay.fit'];
+        const v = e.target.value.toLowerCase();
+        if (taken.includes(v)) {
+          icon.innerHTML = '<span class="u-err">✕</span>';
+          document.getElementById('usernameErr').textContent = 'taken bestie, try another 🙅';
+          document.getElementById('usernameErr').classList.add('show');
+          e.target.classList.add('error');
+        } else if (v.length > 1) {
+          icon.innerHTML = '<span class="u-ok">✓</span>';
+          document.getElementById('usernameErr').classList.remove('show');
+          e.target.classList.remove('error');
+        } else { icon.innerHTML = ''; }
+      }, 500);
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.field-error').forEach(el => el.classList.remove('show'));
+      document.querySelectorAll('.input-field').forEach(el => el.classList.remove('error'));
+
+      const fn  = document.getElementById('firstName').value.trim();
+      const ln  = document.getElementById('lastName').value.trim();
+      const un  = document.getElementById('signupUsername').value.trim();
+      const em  = document.getElementById('signupEmail').value.trim();
+      const pw  = document.getElementById('signupPassword').value;
+      const cf  = document.getElementById('confirmPassword').value;
+      let valid = true;
+
+      if (!fn)              { show('firstNameErr','firstName'); valid=false; }
+      if (!un)              { show('usernameErr','signupUsername'); valid=false; }
+      if (!em||!em.includes('@')) { show('emailErr','signupEmail'); valid=false; }
+      if (pw.length < 6)   { show('pwdErr','signupPassword'); valid=false; }
+      if (pw !== cf)        { show('confirmErr','confirmPassword'); valid=false; }
+      if (!valid) return;
+
+      setLoading(true);
+      await fakeDelay(1100);
+      const res = Auth.signup(fn + (ln?' '+ln:''), un, em, pw);
+      setLoading(false);
+
+      if (!res.ok) {
+        document.getElementById('formErr').textContent = res.error;
+        document.getElementById('formErr').classList.add('show');
+        showToast(res.error, 'error');
+      } else {
+        showToast('you\'re in! welcome to bubble 🫧', 'success');
+        setTimeout(() => window.location.href = 'index.html', 1000);
+      }
+    });
+
+    function show(errId, fieldId) {
+      document.getElementById(errId).classList.add('show');
+      if (document.getElementById(fieldId)) document.getElementById(fieldId).classList.add('error');
+    }
+    function setLoading(on) {
+      document.getElementById('signupBtnText').style.display = on ? 'none' : '';
+      document.getElementById('signupSpinner').style.display = on ? 'inline-block' : 'none';
+      document.getElementById('signupBtn').disabled = on;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Bubble — Home</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="feed.css"/>
+</head>
+<body>
+  <div id="headerMount"></div>
+  <div class="app-layout">
+    <div id="sidebarMount"></div>
+
+    <main class="main-feed">
+      <!-- Stories -->
+      <section class="stories-bar">
+        <div class="stories-scroll"><div class="stories-track" id="storiesRow"></div></div>
+      </section>
+
+      <!-- Feed -->
+      <section class="feed-posts" id="feedPosts"></section>
+    </main>
+
+    <!-- Right panel -->
+    <aside class="right-panel" id="rightPanel"></aside>
+  </div>
+
+  <div id="bottomNavMount"></div>
+
+  <!-- Story Modal -->
+  <div class="story-modal" id="storyModal">
+    <div class="story-backdrop" id="storyBackdrop"></div>
+    <div class="story-viewer" id="storyViewer">
+      <div class="story-segments" id="storySegments"></div>
+      <div class="story-viewer-header">
+        <div class="story-viewer-user">
+          <div class="story-viewer-av" id="svAvatar"></div>
+          <div><div class="sv-name" id="svName"></div><div class="sv-time" id="svTime"></div></div>
+        </div>
+        <div style="display:flex;gap:4px">
+          <button class="story-icon-btn" id="storyCloseBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="story-content" id="storyContent"></div>
+      <div class="story-reply-bar">
+        <input class="story-reply-input" placeholder="Reply to story…"/>
+        <button class="story-reply-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div class="story-tap-left"  id="storyTapLeft"></div>
+      <div class="story-tap-right" id="storyTapRight"></div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="auth.js"></script>
+  <script src="utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
